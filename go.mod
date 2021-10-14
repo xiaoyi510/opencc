@@ -1,4 +1,4 @@
-module gocc
+module github.com/griffinqiu/gocc
 
 go 1.16
 
