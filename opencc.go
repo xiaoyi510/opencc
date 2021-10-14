@@ -2,10 +2,10 @@
 package gocc
 
 import (
+	"embed"
 	"encoding/json"
 	"flag"
 	"fmt"
-	"io/ioutil"
 	"os"
 	"path/filepath"
 	"reflect"
@@ -14,6 +14,12 @@ import (
 
 	"github.com/liuzl/da"
 )
+
+//go:embed config
+var cf embed.FS
+
+//go:embed dictionary
+var df embed.FS
 
 var (
 	// Dir is the parent dir for config and dictionary
@@ -112,8 +118,8 @@ func (cc *OpenCC) initDict() error {
 	if cc.Conversion == "" {
 		return fmt.Errorf("conversion is not set")
 	}
-	configFile := filepath.Join(*Dir, configDir, cc.Conversion+".json")
-	body, err := ioutil.ReadFile(configFile)
+	configFile := filepath.Join("config", cc.Conversion+".json")
+	body, err := cf.ReadFile(configFile)
 	if err != nil {
 		return err
 	}
@@ -192,7 +198,11 @@ func (cc *OpenCC) addDictChain(d map[string]interface{}) (*Group, error) {
 			if !has {
 				return nil, fmt.Errorf("no file field found")
 			}
-			daDict, err := da.BuildFromFile(filepath.Join(*Dir, dictDir, file.(string)))
+			f, err := df.Open(filepath.Join("dictionary", file.(string)))
+			if err != nil {
+				return nil, err
+			}
+			daDict, err := da.Build(f)
 			if err != nil {
 				return nil, err
 			}

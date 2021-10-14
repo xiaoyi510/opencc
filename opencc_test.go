@@ -30,3 +30,18 @@ func TestConvert(t *testing.T) {
 		}
 	}
 }
+
+func BenchmarkConvert(b *testing.B) {
+	s2t, err := New("s2t")
+	if err != nil {
+		b.Fatal(err)
+	}
+	for n := 0; n < b.N; n++ {
+		in := `自然语言处理是人工智能领域中的一个重要方向。`
+		out, err := s2t.Convert(in)
+		if err != nil {
+			b.Fatal(err)
+		}
+		b.Logf("%s\n%s\n", in, out)
+	}
+}
