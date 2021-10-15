@@ -55,7 +55,7 @@ type OpenCC struct {
 }
 
 var conversions = map[string]struct{}{
-	"hk2s": {}, "s2hk": {}, "s2t": {}, "s2tw": {}, "s2twp": {},
+	"hk2s": {}, "s2hk": {}, "s2hkp": {}, "s2t": {}, "s2tw": {}, "s2twp": {},
 	"t2hk": {}, "t2s": {}, "t2tw": {}, "tw2s": {}, "tw2sp": {},
 }
 
@@ -191,12 +191,13 @@ func (cc *OpenCC) addDictChain(d map[string]interface{}) (*Group, error) {
 					return nil, fmt.Errorf("dicts items invalid")
 				}
 			}
-		case "txt":
+		case "ocd2", "txt":
 			file, has := d["file"]
 			if !has {
 				return nil, fmt.Errorf("no file field found")
 			}
-			f, err := df.Open(filepath.Join("dictionary", file.(string)))
+			filename := strings.Replace(filepath.Join("dictionary", file.(string)), ".ocd2", ".txt", 1)
+			f, err := df.Open(filename)
 			if err != nil {
 				return nil, err
 			}

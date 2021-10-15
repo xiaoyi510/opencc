@@ -13,7 +13,7 @@ func assertCases(t *testing.T, s2t *OpenCC, cases map[string]string) {
 			t.Error(err)
 		}
 		if str != v {
-			t.Errorf("%s:%s", k, str)
+			t.Errorf("\nExpected: %s\nActually: %s", v, str)
 		}
 	}
 }
@@ -37,9 +37,9 @@ func TestConvert_s2t(t *testing.T) {
 func TestConvert_s2hk(t *testing.T) {
 	cases := map[string]string{}
 
-	s2t, _ := New("s2hk")
+	s2hk, _ := New("s2hk")
 
-	assertCases(t, s2t, cases)
+	assertCases(t, s2hk, cases)
 }
 
 func BenchmarkConvert(b *testing.B) {
