@@ -23,9 +23,7 @@ var df embed.FS
 
 var (
 	// Dir is the parent dir for config and dictionary
-	Dir       = flag.String("dir", defaultDir(), "dict dir")
-	configDir = "config"
-	dictDir   = "dictionary"
+	Dir = flag.String("dir", defaultDir(), "dict dir")
 )
 
 func defaultDir() string {
@@ -33,7 +31,7 @@ func defaultDir() string {
 		return `C:\gocc\`
 	}
 	if goPath, ok := os.LookupEnv("GOPATH"); ok {
-		return goPath + "/src/github.com/liuzl/gocc/"
+		return goPath + "/src/github.com/griffinqiu/opencc/"
 	} else {
 		return `/usr/local/share/gocc/`
 	}
