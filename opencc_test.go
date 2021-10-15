@@ -1,4 +1,4 @@
-package gocc
+package opencc
 
 import (
 	"testing"

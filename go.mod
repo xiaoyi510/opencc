@@ -1,4 +1,4 @@
-module github.com/griffinqiu/gocc
+module github.com/griffinqiu/opencc
 
 go 1.16
 
