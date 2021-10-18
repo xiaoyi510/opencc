@@ -1,5 +1,5 @@
 {
-  "name": "Simplified Chinese to Traditional Chinese (HongKong standard, with phrases)",
+  "name": "Simplified Chinese to Traditional Chinese (Hong Kong finance)",
   "segmentation": {
     "type": "mmseg",
     "dict": {
@@ -26,7 +26,7 @@
     {
       "dict": {
         "type": "ocd2",
-        "file": "HKPhrases.ocd2"
+        "file": "HKPhrasesFinance.ocd2"
       }
     },
     {

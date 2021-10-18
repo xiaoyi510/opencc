@@ -26,12 +26,6 @@
     {
       "dict": {
         "type": "ocd2",
-        "file": "HKPhrases.ocd2"
-      }
-    },
-    {
-      "dict": {
-        "type": "ocd2",
         "file": "HKVariants.ocd2"
       }
     }

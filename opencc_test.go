@@ -34,10 +34,16 @@ func TestConvert_s2t(t *testing.T) {
 	assertCases(t, s2t, cases)
 }
 
-func TestConvert_s2hk(t *testing.T) {
-	cases := map[string]string{}
+func TestConvert_s2hk_finance(t *testing.T) {
+	cases := map[string]string{
+		"保证金":      "按金",
+		"保證金":      "按金",
+		"募集資金":     "籌集資金",
+		"套利交易":     "對沖",
+		"下周开始公开配售": "下週開始公開招股",
+	}
 
-	s2hk, _ := New("s2hk")
+	s2hk, _ := New("s2hk-finance")
 
 	assertCases(t, s2hk, cases)
 }
