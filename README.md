@@ -42,7 +42,7 @@ func main() {
 }
 ```
 
-#### 預設配置文件
+## 預設配置文件
 
 - `s2t.json` Simplified Chinese to Traditional Chinese 簡體到繁體
 - `t2s.json` Traditional Chinese to Simplified Chinese 繁體到簡體
@@ -59,6 +59,19 @@ func main() {
 - `jp2t.json` New Japanese Kanji (Shinjitai) to Traditional Chinese Characters (Kyūjitai) 日文新字體到繁體（OpenCC 標準，舊字體）
 - `tw2t.json` Traditional Chinese (Taiwan standard) to Traditional Chinese 臺灣正體到繁體（OpenCC 標準）
 - `s2hk-finance.jsom` 针对香港市场金融数据，做了特殊补充。
+
+## Benchmarks
+
+Use 14K text to run benchmark.
+
+See [benchmark_test.go](https://github.com/griffinqiu/opencc/tree/master/tests/benchmark_test.go)
+
+| Mode         | Duration / op |
+| ------------ | ------------- |
+| s2t          | 2.5 ms        |
+| t2s          | 2.8 ms        |
+| s2hk-finance | 5 ms          |
+| s2tw         | 3.8 ms        |
 
 ## License
 
