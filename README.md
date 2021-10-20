@@ -62,16 +62,27 @@ func main() {
 
 ## Benchmarks
 
-Use 14K text to run benchmark.
-
 See [benchmark_test.go](https://github.com/griffinqiu/opencc/tree/master/tests/benchmark_test.go)
 
-| Mode         | Duration / op |
-| ------------ | ------------- |
-| s2t          | 2.5 ms        |
-| t2s          | 2.8 ms        |
-| s2hk-finance | 5 ms          |
-| s2tw         | 3.8 ms        |
+### Short text (100 chars)
+
+| Mode         | Number of Chars | Duration / op |
+| ------------ | --------------- | ------------- |
+| s2t          | 100             | 0.04 ms       |
+| t2s          | 100             | 0.04 ms       |
+| s2hk-finance | 100             | 0.07 ms       |
+| s2tw         | 100             | 0.063 ms      |
+
+### Long Text (14K)
+
+Use 14K text to run benchmark.
+
+| Mode         | Number of Chars | Duration / op |
+| ------------ | --------------- | ------------- |
+| s2t          | 14K             | 2.5 ms        |
+| t2s          | 14K             | 2.8 ms        |
+| s2hk-finance | 14K             | 5 ms          |
+| s2tw         | 14K             | 3.8 ms        |
 
 ## License
 
