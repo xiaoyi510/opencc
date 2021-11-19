@@ -2,7 +2,7 @@
 
 [![Go](https://github.com/longbridgeapp/opencc/workflows/Go/badge.svg)](https://github.com/longbridgeapp/opencc/actions?query=workflow%3AGo)
 
-This is a Go version of OpenCC([Open Chinese Convert 開放中文轉換](https://github.com/BYVoid/OpenCC/)) which is a project for conversion between Traditional and Simplified Chinese developed by [BYVoid](https://www.byvoid.com/).
+This is a pure Go version of OpenCC([Open Chinese Convert 開放中文轉換](https://github.com/BYVoid/OpenCC/)) which is a project for conversion between Traditional and Simplified Chinese developed by [BYVoid](https://www.byvoid.com/). Avoid C library dependency and use Go Embed feature for embed dict into to binary for deploy easily.
 
 此项目是基于 Native Go 方式实现 OpenCC，利用 OpenCC 官方的词典，减少 C 库对环境的依赖，同时，基于 Go Embed 特性，可以让我们编译的时候，直接将字典打包到 Go 的二进制里面，以获得较好的开发部署体验。
 
