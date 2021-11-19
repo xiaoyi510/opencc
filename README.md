@@ -1,6 +1,6 @@
 # OpenCC for Go
 
-[![Go](https://github.com/griffinqiu/opencc/workflows/Go/badge.svg)](https://github.com/griffinqiu/opencc/actions?query=workflow%3AGo)
+[![Go](https://github.com/longbridgeapp/opencc/workflows/Go/badge.svg)](https://github.com/longbridgeapp/opencc/actions?query=workflow%3AGo)
 
 This is a Go version of OpenCC([Open Chinese Convert 開放中文轉換](https://github.com/BYVoid/OpenCC/)) which is a project for conversion between Traditional and Simplified Chinese developed by [BYVoid](https://www.byvoid.com/).
 
@@ -9,7 +9,7 @@ This is a Go version of OpenCC([Open Chinese Convert 開放中文轉換](https:/
 ## Installation
 
 ```sh
-go get github.com/griffinqiu/opencc
+go get github.com/longbridgeapp/opencc
 ```
 
 ## Usage
@@ -21,7 +21,7 @@ import (
     "fmt"
     "log"
 
-    "github.com/griffinqiu/opencc"
+    "github.com/longbridgeapp/opencc"
 )
 
 func main() {
@@ -62,7 +62,7 @@ func main() {
 
 ## Benchmarks
 
-See [benchmark_test.go](https://github.com/griffinqiu/opencc/tree/master/tests/benchmark_test.go)
+See [benchmark_test.go](https://github.com/longbridgeapp/opencc/tree/master/tests/benchmark_test.go)
 
 ### Short text (100 chars)
 

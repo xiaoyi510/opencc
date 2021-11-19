@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/griffinqiu/opencc"
+	"github.com/longbridgeapp/opencc"
 	"github.com/sergi/go-diff/diffmatchpatch"
 )
 
