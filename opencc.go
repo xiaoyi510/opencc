@@ -7,7 +7,7 @@ import (
 	"flag"
 	"fmt"
 	"os"
-	"path/filepath"
+	"path"
 	"reflect"
 	"runtime"
 	"strings"
@@ -122,7 +122,7 @@ func (cc *OpenCC) initDict() error {
 	if cc.Conversion == "" {
 		return fmt.Errorf("conversion is not set")
 	}
-	configFile := filepath.Join("config", cc.Conversion+".json")
+	configFile := path.Join("config", cc.Conversion+".json")
 	body, err := cf.ReadFile(configFile)
 	if err != nil {
 		return err
@@ -202,7 +202,7 @@ func (cc *OpenCC) addDictChain(d map[string]interface{}) (*Group, error) {
 			if !has {
 				return nil, fmt.Errorf("no file field found")
 			}
-			filename := strings.Replace(filepath.Join("dictionary", file.(string)), ".ocd2", ".txt", 1)
+			filename := strings.Replace(path.Join("dictionary", file.(string)), ".ocd2", ".txt", 1)
 			f, err := df.Open(filename)
 			if err != nil {
 				return nil, err
