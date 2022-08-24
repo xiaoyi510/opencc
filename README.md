@@ -58,7 +58,7 @@ func main() {
 - `t2jp.json` Traditional Chinese Characters (Kyūjitai) to New Japanese Kanji (Shinjitai) 繁體（OpenCC 標準，舊字體）到日文新字體
 - `jp2t.json` New Japanese Kanji (Shinjitai) to Traditional Chinese Characters (Kyūjitai) 日文新字體到繁體（OpenCC 標準，舊字體）
 - `tw2t.json` Traditional Chinese (Taiwan standard) to Traditional Chinese 臺灣正體到繁體（OpenCC 標準）
-- `s2hk-finance.jsom` 针对香港市场金融数据，做了特殊补充。
+- `s2hk-finance.json` 针对香港市场金融数据，做了特殊补充。
 
 ## Benchmarks
 
